@@ -1,4 +1,4 @@
-// Copyright (c) 2020 Mr. Coxall All rights reserved
+// Copyright (c) conor 2023 All rights reserved
 //
 // Created by: conor-otoole
 // Created on: Sep 2020
@@ -7,17 +7,25 @@
 "use strict"
 
 /**
- * Check servie worker.
+ * Check service worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
-    scope: "/ICS2O-PWA-Test/",
+  navigator.serviceWorker.register("/ICS2O-Unit-5-06/sw.js", {
+    scope: "/ICS2O-Unit-5-06/",
   })
 }
 
-/**
- * This function displays an alert.
- */
 function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  let text = ""
+  let counter = 0
+  const integerA = parseInt(document.getElementById("integer-A").value)
+  var integerB = parseInt(document.getElementById("integer-B").value)
+  const integerBOV = parseInt(document.getElementById("integer-B").value)
+
+  while (counter < integerA) {
+    text = text + "<br />Your number is: " + integerB
+    counter++
+    integerB = integerB + integerBOV
+  }
+  document.getElementById("answer").innerHTML = text
 }
